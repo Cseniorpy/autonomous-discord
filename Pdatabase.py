@@ -12,8 +12,8 @@ import sqlite3
 import asyncio
 
 #ASSIGNING THE PREFIX FOR THE BOT
-bot = commands.Bot(command_prefix='.')
-TOKEN = "TOKEN"
+bot = commands.Bot(command_prefix='!')
+TOKEN = "NjI3ODY4MDIxNTIzNzQyNzcx.XZDVoQ.Jpzd5XMOd6f310YKchF6QemU6jk"
 
 #EVERY BOT HAS OWN 'HELP' COMMAND DEFAULT
 #REMOVE THIS COMMAND FOR CREATE A BRAND NEW ONE 
@@ -35,7 +35,7 @@ async def on_ready():
 #THIS EVENT NOTIFIED THE SPECIFIED CHANNELS WHEN A CHANNEL DELETED
 @bot.event 
 async def on_guild_channel_delete(channel):
-    channel_chat = bot.get_channel(ID)
+    channel_chat = bot.get_channel(627812771450454046)
     await channel_chat.send("The channel named **{}** has been removed.. ".format(channel))
 
 #THIS EVENT FOR DATABASE
@@ -50,8 +50,8 @@ async def on_message(message):
     #THIS FORMULA IS FOR SPECIFIED USER WHO SENT A MESSAGE
     user_name_in_database = f"{self_user}_name"
 
-    #WHIT THIS METHOD, THE BOT ITSELF CAN BE BLOCK 
-    if self_user.id != ID:
+    #WITH THIS METHOD, THE BOT ITSELF CAN BE BLOCK 
+    if self_user.id != 627868021523742771 and self_user.id != 627810845971316737:
         connect_database = sqlite3.connect('{}.sqlite'.format(user_name_in_database))
         cursor_database = connect_database.cursor()
 
@@ -68,7 +68,6 @@ async def on_message(message):
         fetched_one = cursor_database.fetchone()
         
 
-        
         try:
             cursor_database.execute("UPDATE users SET Time = ?", (current_time))
         except ValueError:
@@ -85,7 +84,7 @@ async def on_message(message):
     #IF NOT, THE COMMANDS WON'T WORK PROPERLY
     await bot.process_commands(message)
 
-
+"""
 #SAVES THE INSULTING USERS IN HERE
 insulting_users = []
 #DELETE THE BAD WORDS FROM THE SERVER
@@ -104,16 +103,16 @@ async def on_message(message):
             insulting_users.append(message.author.id)
             if message.author.id in insulting_users:
                 pass 
-
+"""
 
 #THIS IS FOR THE CLASSIC RULE CHANNEL WHEN AN USER ENTERS TO THE SERVER
 #WITH THIS EVENT, THE USER MUST ACCEPT THE RULES BEFORE ENTERING THE SERVER'S CHANNELS
 @bot.event 
 async def on_reaction_add(reaction, user):
-    channel = bot.get_channel(ID)
+    channel = bot.get_channel(627899350978265117)
     emj_approve = '\U0001F44D'
     if reaction.message.channel == channel: 
-        if user.id != USERID:          
+        if user.id != 627868021523742771:          
             if reaction.emoji == emj_approve:
                 await channel.send("Correct answer!")
 
@@ -134,7 +133,7 @@ async def on_reaction_add(reaction, user):
 #                                         COMMAND SECTION                                        #
 #------------------------------------------------------------------------------------------------#
 
-
+"""
 #THIS SHOWS THE SERVER'S INFO
 @bot.command()
 async def server(ctx):
@@ -151,8 +150,8 @@ async def server(ctx):
     embed.add_field(name='**Birthday of the Server**', value='```29/08/19```')
 
     await ctx.send(embed=embed)
-
-
+"""
+"""
 #WITH THIS COMMAND, THE USER WHO HAS PERMISSION CAN REMOVE MESSAGES IN A CHANNEL
 @bot.command()
 async def clear(ctx, amount: int):
@@ -163,19 +162,24 @@ async def clear(ctx, amount: int):
         await ctx.channel.purge(limit = amount)
     else:
         await ctx.send("You can't use this command .. ")
-
+"""
 
 #THIS IS FOR RESIZED AVATAR IMAGE OF THE USER 
 @bot.command()
-async def profile(ctx):
+async def profil(ctx):
+
+    try:
     
-    user = ctx.guild.get_member(ctx.author.id) # Fake snowflake, will not work
-    if not user:
-        return # Can't find the user, then quit
-    profile_picture = user.avatar_url
-    embed=discord.Embed(title=ctx.author.name, description='' , color=0xecce8b)
-    embed.set_image(url=(profile_picture))
-    await ctx.send(embed=embed)
+        user = ctx.author # Fake snowflake, will not work
+        if not user:
+            return # Can't find the user, then quit
+        profile_picture = user.avatar_url
+        embed=discord.Embed(title=ctx.author.name, description='' , color=0xecce8b)
+        embed.set_image(url=(profile_picture))
+        await ctx.send(embed=embed)
+    
+    except sqlite3.OperationalError:
+        await ctx.send("**Operational Error..**")
 
 @bot.command(aliases=["hi","hello","yo"])
 async def hey(ctx):
@@ -183,6 +187,7 @@ async def hey(ctx):
     await ctx.send("Hey {} {}".format(ctx.author.name, emj))
 
 
+"""
 @bot.command()
 async def help(ctx):
     user = ctx.author 
@@ -194,7 +199,7 @@ async def help(ctx):
     
     await user.send(embed=embed)
 
-
+"""
 #------------------------------------------------------------------------------------------------#
 #                                                                                                #
 #------------------------------------------------------------------------------------------------#

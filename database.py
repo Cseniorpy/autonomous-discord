@@ -34,7 +34,7 @@ async def on_ready():
 
 @bot.event 
 async def on_member_join(member):
-    welcome_message = """**Hoşgeldin {0.name}**\n```Ön Koşul```\n```Bu sunucuda geçirdiğn vakit boyunca kendini farklı alanlarda geliştirmek için birbirinden farklı fırsatlar yakalayabilirsin. Birçok kişiyle tanışabilir ve bilgi alışverişinde bulunabilirsin. Bu ekipte bulunduğun süreçte gösterdiğin çaba ve becerilerin, seni çok iyi yerlere getirecek. Eğer sen de kendini geliştirmek, ve bu ekibin gerçek bir üyesi olmak istiyorsan Ön Koşul'u okuduğunu onaylamalısın.. Unutma! her bir sohbet kayıt altına alınmaktadır..```""".format(member)
+    welcome_message = """**Otonom Araç Projesi'ne Hoşgeldin {0.name}**\n```Ön Koşul```\n```Bu sunucuda geçirdiğin vakit boyunca kendini farklı alanlarda geliştirmek için birbirinden farklı fırsatlar yakalayabilirsin. Birçok kişiyle tanışabilir ve bilgi alışverişinde bulunabilirsin. Bu ekipte bulunduğun süreçte gösterdiğin çaba ve becerilerin, seni çok iyi yerlere getirecek. Eğer sen de kendini geliştirmek, ve bu Projenin gerçek bir üyesi olmak istiyorsan Ön Koşul'u okuduğunu onaylamalısın.. Unutma! her bir sohbet kayıt altına alınmaktadır..```""".format(member)
     channel = bot.get_channel(627921483934466072)
     msg_send = await channel.send(welcome_message)
     r1 = '\U00002714'

@@ -11,7 +11,7 @@ import numpy
 
 
 bot = commands.Bot(command_prefix='.')
-TOKEN = ('NjI3ODEwODQ1OTcxMzE2NzM3.XZCEjA.b_EOm9IXD6xXJmrHW7-S1rM6TQk')
+TOKEN = ('NjI3ODEwODQ1OTcxMzE2NzM3.XZCYxg.HqQfkM29nuV_BNe1R_o9WiO_HW0')
 bot.remove_command('help')
 
 
@@ -32,6 +32,9 @@ bot.remove_command('help')
 
 @bot.event
 async def on_ready():
+
+    game = discord.Game(".yardım(bot-test)")
+    await bot.change_presence(status=discord.Status.idle, activity=game)
     
 
 #----------------------------GLOBAL VARIABLES-------------------------------#
@@ -71,8 +74,8 @@ async def on_member_remove(member):
 @bot.command()
 async def yardım(ctx):
 
-
-    
+    user = ctx.author
+   
     if not ctx.channel in public_channel_list:
         await ctx.channel.send("**Bu kanalı kullanmalısın :point_right: {0.mention}**".format(channel_bot_test))
 
@@ -86,7 +89,7 @@ async def yardım(ctx):
         #embed.add_field(name='****', value='``````')
         #embed.add_field(name='****', value='``````')
 
-        await ctx.channel.send(embed=embed)
+        await user.send(embed=embed)
 
 
 @bot.command()

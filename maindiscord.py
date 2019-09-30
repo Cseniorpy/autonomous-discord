@@ -84,7 +84,7 @@ async def yardım(ctx):
         embed = discord.Embed(title='YARDIMCI KOMUTLAR', description='Bu komutları Sunucu içerisindeki **bot-test** kanalında kullanmalısın', color=0x4ad7ed)
 
         embed.add_field(name='**> kanal**', value='```Sunucuda bulunan kanalların açıklamasını gösterir```')
-        #embed.add_field(name='****', value='``````')
+        embed.add_field(name='**> sunucu**', value='```Sunucu hakkında bilgi verir```')
         #embed.add_field(name='****', value='``````')
         #embed.add_field(name='****', value='``````')
         #embed.add_field(name='****', value='``````')

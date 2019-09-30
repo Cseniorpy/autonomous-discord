@@ -1,0 +1,25 @@
+maindiscord.py 
+--------------
+
+Main BOT for the server 
+> This will help to users for the Project 
+
+
+
+
+database.py
+--------------
+
+This is the Database script for the server
+> Track all the chat in the server in a different destination 
+
+
+
+
+movefiles.py
+--------------
+
+The files from the Database must stay in a different directory from the local Git reporsitory
+> This script allows to move '.sqlite' files from Local Git Repository to a different directory 
+
+

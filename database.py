@@ -13,7 +13,7 @@ import asyncio
 
 #ASSIGNING THE PREFIX FOR THE BOT
 bot = commands.Bot(command_prefix='!')
-TOKEN = "NjI3ODY4MDIxNTIzNzQyNzcx.XZDffg.zOOKEVPYk14LsgSwFgO8Ylp9d4A"
+TOKEN = "NjI3ODY4MDIxNTIzNzQyNzcx.XZHRzA.AB6gn8CyXdQCafS6Yrx1Xi-pm9s"
 
 #EVERY BOT HAS OWN 'HELP' COMMAND DEFAULT
 #REMOVE THIS COMMAND FOR CREATE A BRAND NEW ONE 
@@ -30,6 +30,13 @@ bot.remove_command('help')
 async def on_ready():
     game = discord.Game("Coding Pyhton")
     await bot.change_presence(status=discord.Status.idle, activity=game)
+
+
+    global public_channel_list
+    global channel_bot_test, channel_private_experiments
+    channel_bot_test = bot.get_channel(627807374736097310)
+    channel_private_experiments = bot.get_channel(627815214422687754)
+    public_channel_list = [channel_bot_test,channel_private_experiments]
 
 
 @bot.event 

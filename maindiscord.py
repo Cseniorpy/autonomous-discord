@@ -11,7 +11,7 @@ import numpy
 
 
 bot = commands.Bot(command_prefix='.')
-TOKEN = 'NjI3ODEwODQ1OTcxMzE2NzM3.XZDoew.5IHRMZo3ROw2mmFeclni-pFROQ0'
+TOKEN = 'NjI3ODEwODQ1OTcxMzE2NzM3.XZHRkg.5YpM0a78kbw-FvqtJF7n_7tvNMk'
 bot.remove_command('help')
 
 
@@ -40,11 +40,6 @@ async def on_ready():
 #----------------------------GLOBAL VARIABLES-------------------------------#
 #                                                                           #
 #---------------------------------------------------------------------------#
-    global public_channel_list
-    global channel_bot_test, channel_private_experiments
-    channel_bot_test = bot.get_channel(627807374736097310)
-    channel_private_experiments = bot.get_channel(627815214422687754)
-    public_channel_list = [channel_bot_test,channel_private_experiments]
 
 
     print("BOT is ready!")
@@ -86,7 +81,7 @@ async def yardım(ctx):
 
     else:
       
-        embed = discord.Embed(title='YARDIMCI KOMUTLAR', description='', color=0x4ad7ed)
+        embed = discord.Embed(title='YARDIMCI KOMUTLAR', description='Bu komutları Sunucu içerisindeki **bot-test** kanalında kullanmalısın', color=0x4ad7ed)
 
         embed.add_field(name='**> kanal**', value='```Sunucuda bulunan kanalların açıklamasını gösterir```')
         #embed.add_field(name='****', value='``````')

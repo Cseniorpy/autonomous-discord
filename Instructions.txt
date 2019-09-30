@@ -11,7 +11,7 @@ database.py
 --------------
 
 This is the Database script for the server
-> Track all the chat in the server in a different destination 
+> Track all the chat in the server
 
 
 
@@ -19,7 +19,7 @@ This is the Database script for the server
 movefiles.py
 --------------
 
-The files from the Database must stay in a different directory from the local Git reporsitory
+The files from the Database must stay in a different directory from the local Git repository
 > This script allows to move '.sqlite' files from Local Git Repository to a different directory 
 
 

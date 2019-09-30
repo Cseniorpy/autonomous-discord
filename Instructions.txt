@@ -11,7 +11,7 @@ database.py
 --------------
 
 This is the Database script for the server
-> Track all the chat in the server
+> Track whole chat in the server
 
 
 

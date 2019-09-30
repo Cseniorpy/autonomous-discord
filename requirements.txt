@@ -1,0 +1,18 @@
+Python Version = 3.7.4
+Git Version = 2.23.0
+
+
+Libraries/Modules
+-----------------
+
+
+> discord
+> asyncio
+> datetime
+> time
+> numpy 
+> os
+> shutil 
+> random 
+> sqlite
+> emoji 
